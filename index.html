@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class</title>
+</head>
+<body>
+<h1>Class,Constructor</h1>
+<script>
+
+<!---------------------------------- 1 ------------------------------------->
+class Person{
+constructor(name,age,country){
+this.name=name;
+this.age=age;
+this.country=country;
+}
+display(){
+console.log(`i am ${this.name} and my age is ${this.age} form ${this.country}`)
+}
+}
+let use=new Person("Koushi",24,"India");
+let use2=new Person("kannan",60,"UAE");
+use.display()
+use2.display()
+
+<!-- output -->
+<!-- "i am Koushi and my age is 24 form India" -->
+<!-- "i am kannan and my age is 60 form UAE" -->
+
+<!---------------------------------- 2 ------------------------------------>
+class Rectangle{
+constructor(height,width){
+this.height=height;
+this.width=width;
+}
+area(){
+let a=this.height*this.width;
+console.log(`Area of a Rectangle:${a}`);
+}
+perimeter(){
+let p=2*(this.height+this.width);
+console.log(`Perimeter of a Rectangle:${p}`);
+}
+}
+let ans=new Rectangle(15,10);
+ans.area();
+ans.perimeter();
+
+<!-- output -->
+<!-- "Area of a Rectangle:150" -->
+<!-- "Perimeter of a Rectangle:50" -->
+
+<!--------------------------------- 3 ------------------------------------>
+class BankAccount{
+constructor(accno,bal){
+this.accno=accno;
+this.bal=bal;
+}
+deposit(e){
+let dep=this.bal+e;
+console.log(`Account Number:${this.accno} and Balance:${this.bal}`);
+console.log(`Your Deposit Successfully and Your Current AccBalance:${dep}`);
+}
+withdraw(val){
+let wid=this.bal-val;
+console.log(`You Have Withdrawal ${val} and Your Current AccBalance:${wid}`);
+}
+}
+let ans2=new BankAccount(202022,2000);
+let ans3=new BankAccount(202055,5000);
+ans2.deposit(1500);
+ans2.withdraw(500);
+ans3.deposit(1000);
+ans3.withdraw(200);
+
+<!-- output -->
+<!-- "Account Number:202022 and Balance:2000" -->
+<!-- "Your Deposit Successfully and Your Current AccBalance:3500" -->
+<!-- "You Have Withdrawal 500 and Your Current AccBalance:1500" -->
+<!-- "Account Number:202055 and Balance:5000" -->
+<!-- "Your Deposit Successfully and Your Current AccBalance:6000" -->
+<!-- "You Have Withdrawal 200 and Your Current AccBalance:4800" -->
+
+<!--------------------------------- 4 ---------------------------------->
+<!-- Write a JavaScript program that creates a class called 'Shape' with a method to calculate the area. Create two subclasses, 'Circle' and 'Triangle', that inherit from the 'Shape' class and override the area calculation method. Create an instance of the 'Circle' class and calculate its area. Similarly, do the same for the 'Triangle' class. -->
+
+class Shape{
+	constructor(){
+		// this.length=length;
+	}
+	area(){
+		console.log("area not defined")
+	}
+}
+	class Circle extends Shape{
+		constructor(radius){
+			super()
+			this.radius=radius;
+		}
+		area(){
+			
+			let ra=3.14*this.radius*this.radius
+			console.log(`Area of Circle ${ra}`)
+		}
+	}
+	class Triangle extends Shape{
+		constructor(b,h){
+			super()
+			this.b=b;
+			this.h=h;
+		}
+		claArea(){
+			let tri=0.5*this.b*this.h;
+			console.log(`Area of Triangle ${tri}`)
+		}
+	}
+let rad=new Circle(10);
+rad.area();
+let tri=new Triangle(10,20);
+tri.area();
+
+<!-- output -->
+<!-- "Area of Circle 314" -->
+<!-- "Area of Triangle 100" -->
+
+<!----------------------------------- 5 -------------------------------->
+class Employee{
+constructor(name,salary){
+this.name=name;
+this.salary=salary;
+}
+ansal(){
+console.log(`Employee Name:${this.name},Salary:${this.salary}`)
+}
+}
+class Manager extends Employee{
+constructor(name,salary,department){
+super(name,salary)
+this.department=department;
+
+}
+ansal(){
+let bon=this.salary+5000;
+console.log(`Employee Name:${this.name} from ${this.department} department ,Salary:${bon}`);
+}}
+let emp=new Manager("Koushi",20000,"Front-End");
+let emp2=new Manager("Ram",60000,"Back-End");
+emp.ansal();
+emp2.ansal();
+
+<!-- output -->
+<!-- "Employee Name:Koushi from Front-End department ,Salary:25000" -->
+<!-- "Employee Name:Ram from Back-End department ,Salary:65000" -->
+
+<!------------------------------------ 6 -------------------------------->
+<!-- Write a JavaScript program that creates a class `Book` with properties for title, author, and publication year. Include a method to display book details. Create a subclass called 'Ebook' that inherits from the 'Book' class and includes an additional property for book price. Override the display method to include the book price. Create an instance of the 'Ebook' class and display its details. -->
+
+class Book{
+constructor(title,author,publicationyear){
+this.title=title;
+this.author=author;
+this.publicationyear=publicationyear;
+}
+display(){
+console.log(`${this.title},${this.author},${this.publicationyear}`);
+}
+}
+class Ebook extends Book{
+constructor(title,author,publicationyear,price){
+super(title,author,publicationyear)
+this.price=price;
+}
+display2(){
+console.log(`${this.title},${this.author},${this.publicationyear},${this.price}`);
+}
+}
+let book1=new Ebook("AAA","bbb",2000,120);
+let book2=new Ebook("XYZ","kkk",2012,250);
+book1.display2();
+book2.display2();
+
+<!-- output -->
+<!-- "AAA,bbb,2000,120" -->
+<!-- "XYZ,kkk,2012,250" -->
+
+</script>
+</body>
+</html>
