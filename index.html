@@ -85,35 +85,35 @@ ans3.withdraw(200);
 <!-- Write a JavaScript program that creates a class called 'Shape' with a method to calculate the area. Create two subclasses, 'Circle' and 'Triangle', that inherit from the 'Shape' class and override the area calculation method. Create an instance of the 'Circle' class and calculate its area. Similarly, do the same for the 'Triangle' class. -->
 
 class Shape{
-	constructor(){
-		// this.length=length;
-	}
-	area(){
-		console.log("area not defined")
-	}
+constructor(){
+// this.length=length;
 }
-	class Circle extends Shape{
-		constructor(radius){
-			super()
-			this.radius=radius;
-		}
-		area(){
-			
-			let ra=3.14*this.radius*this.radius
-			console.log(`Area of Circle ${ra}`)
-		}
-	}
-	class Triangle extends Shape{
-		constructor(b,h){
-			super()
-			this.b=b;
-			this.h=h;
-		}
-		claArea(){
-			let tri=0.5*this.b*this.h;
-			console.log(`Area of Triangle ${tri}`)
-		}
-	}
+area(){
+console.log("area not defined")
+}
+}
+class Circle extends Shape{
+constructor(radius){
+	super()
+	this.radius=radius;
+}
+area(){
+	
+	let ra=3.14*this.radius*this.radius
+	console.log(`Area of Circle ${ra}`)
+}
+}
+class Triangle extends Shape{
+constructor(b,h){
+	super()
+	this.b=b;
+	this.h=h;
+}
+area(){
+	let tri=0.5*this.b*this.h;
+	console.log(`Area of Triangle ${tri}`)
+}
+}
 let rad=new Circle(10);
 rad.area();
 let tri=new Triangle(10,20);
@@ -153,7 +153,6 @@ emp2.ansal();
 <!-- "Employee Name:Ram from Back-End department ,Salary:65000" -->
 
 <!------------------------------------ 6 -------------------------------->
-<!-- Write a JavaScript program that creates a class `Book` with properties for title, author, and publication year. Include a method to display book details. Create a subclass called 'Ebook' that inherits from the 'Book' class and includes an additional property for book price. Override the display method to include the book price. Create an instance of the 'Ebook' class and display its details. -->
 
 class Book{
 constructor(title,author,publicationyear){
@@ -161,7 +160,7 @@ this.title=title;
 this.author=author;
 this.publicationyear=publicationyear;
 }
-display(){
+display2(){
 console.log(`${this.title},${this.author},${this.publicationyear}`);
 }
 }
